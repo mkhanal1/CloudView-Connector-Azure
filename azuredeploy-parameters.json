@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "automationAccountName": {
+            "value": "testrgaa"
+        },
+        "automationRegion": {
+            "value": "centralindia"
+        },
+        "userName": {
+            "value": "mikeshkhanal@contoso.com"
+        },
+        "password": {
+            "value": null
+        },
+        "qualysuserName": {
+            "value": "qualys_admin"
+        },
+        "qualyspassword": {},
+        "baseURL": {
+            "value": "https://qualysguard.qualys.com"
+        },
+        "jobId": {
+            "value": "e6abf1fd-6311-4444-ac1a-22aae3cacdae"
+        }
+    }
+}
