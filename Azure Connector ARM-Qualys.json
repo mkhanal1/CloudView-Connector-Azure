@@ -1,0 +1,229 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "automationAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Specify the name of your Automation Account"
+            }
+        },
+        "automationRegion": {
+            "type": "string",
+            "allowedValues": [
+                "westeurope",
+                "southeastasia",
+                "eastus2",
+                "southcentralus",
+                "japaneast",
+                "northeurope",
+                "canadacentral",
+                "australiasoutheast",
+                "centralindia",
+                "westcentralus"
+            ],
+            "metadata": {
+                "description": "Specify the region for your automation account"
+            }
+        },
+        "userName": {
+            "type": "string",
+            "metadata": {
+                "description": "The username for the Azure Automation credential."
+            }
+        },
+        "password": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The password for the Azure Automation credential."
+            }
+        },
+        "QualysuserName": {
+            "type": "string",
+            "metadata": {
+                "description": "The username for the Azure Automation credential."
+            }
+        },
+        "Qualyspassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The password for the Azure Automation credential."
+            }
+        },
+        "BaseURL": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URL for Qualys Cloud Platform API."
+            }
+        },
+        "_artifactsLocation": {
+            "type": "string",
+            "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/asr-automation-recovery",
+            "metadata": {
+                "description": "URI to artifacts location"
+            }
+        },
+        "_artifactsLocationSasToken": {
+            "type": "securestring",
+            "defaultValue": "",
+            "metadata": {
+                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated"
+            }
+        },
+        "jobId": {
+            "type": "string",
+            "metadata": {
+                "description": "The GUID for the runbook job to be started."
+            }
+        }
+    },
+    "variables": {
+        "assets": {
+            "aaVariables": {
+                "AzureSubscriptionId": {
+                    "name": "AzureSubscriptionId",
+                    "description": "Azure subscription Id"
+                }
+            }
+        },
+        "runbook": [
+            {
+                "name": "Azure-Connector",
+                "url": "[concat(parameters('_artifactsLocation'), '/scripts/Azure-Connector.ps1', parameters('_artifactsLocationSasToken'))]",
+                "description": "A Runbook to create Azure Connector"
+            }
+        ],
+		"module": [
+            {
+                "name": "AzureAD",
+                "url": "https://psg-prod-eastus.azureedge.net/packages/azuread.2.0.2.4.nupkg"
+            }
+        ]   
+	},
+    "resources": [
+        {
+            "name": "[parameters('automationAccountName')]",
+            "type": "Microsoft.Automation/automationAccounts",
+            "apiVersion": "2015-10-31",
+            "location": "[parameters('automationRegion')]",
+            "properties": {
+                "sku": {
+                    "name": "Basic"
+                }
+            },
+            "resources": [
+                {
+                    "name": "[variables('assets').aaVariables.AzureSubscriptionId.name]",
+                    "type": "variables",
+                    "apiVersion": "2015-10-31",
+                    "dependsOn": [
+                        "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+                    ],
+                    "tags": {},
+                    "properties": {
+                        "description": "[variables('assets').aaVariables.AzureSubscriptionId.description]",
+                        "value": "[concat('\"',subscription().subscriptionId,'\"')]"
+                    }
+                },
+                {
+                    "name": "baseurl",
+                    "type": "variables",
+                    "apiVersion": "2015-10-31",
+                    "dependsOn": [
+                        "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+                    ],
+                    "tags": {},
+                    "properties": {
+                        "description": "The base URL for Qualys Cloud Platform API.",
+                        "value": "[parameters('BaseURL')]"
+                    }
+                },				
+			    {
+					"name": "QualysCredentials",
+					"type": "credentials",
+					"apiVersion": "2015-01-01-preview",
+					"location": "[resourceGroup().location]",
+					"dependsOn": [
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+					],
+					"tags": { },
+					"properties": {
+					"userName": "[parameters('QualysuserName')]",
+					"password": "[parameters('Qualyspassword')]"
+				}
+				},
+			    {
+					"name": "AzureCredentials",
+					"type": "credentials",
+					"apiVersion": "2015-01-01-preview",
+					"location": "[resourceGroup().location]",
+					"dependsOn": [
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+					],
+					"tags": { },
+					"properties": {
+					"userName": "[parameters('userName')]",
+					"password": "[parameters('password')]"
+				}
+				},
+				{
+					"apiVersion": "2015-10-31",
+					"type": "Microsoft.Automation/automationAccounts/modules",
+					"name": "[concat(parameters('automationAccountName'), '/', variables('module').name)]",
+					"location": "[parameters('automationRegion')]",
+					"dependsOn": [
+						"[resourceId('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+					],
+					"properties": {
+						"contentLink": {
+							"uri": "[variables('module').url]"
+						}
+					}
+				},
+			    {
+					"name": "[parameters('jobId')]",
+					"type": "jobs",
+					"apiVersion": "2015-01-01-preview",
+					"location": "[parameters('automationRegion')]",
+					"dependsOn": [
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]",
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'), '/runbooks/',variables('runbook').name)]"
+					],
+					"tags": {
+					"key": "value"
+					},
+					"properties": {
+					"runbook": {
+						"name": "[variables('runbook').name]"
+					}
+					}
+				},
+				{
+					"name": "[variables('runbook').name]",
+					"type": "runbooks",
+					"apiVersion": "2015-01-01-preview",
+					"location": "[parameters('automationRegion')]",
+					"dependsOn": [
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('accountName'))]"
+					],
+					"tags": { },
+					"properties": {
+					"runbookType": "Script",
+					"logProgress": false,
+					"logVerbose": false,
+					"description": "[variables('runbook').description]",
+					"publishContentLink": {
+						"uri": "[variables('runbook').url]",
+						"version": "1.0.0.0"
+					}
+					}
+				},
+				
+            ]
+        }
+	],
+    "outputs": {}
+}
+	
+
+	
