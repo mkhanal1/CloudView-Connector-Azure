@@ -80,10 +80,6 @@ $SessionInfo = Get-AzureADCurrentSessionInfo
 $application = New-AzureADApplication -DisplayName "MikeshKhanal-$($SessionInfo.TenantId)" -IdentifierUris "https://$($SessionInfo.TenantDomain)/$((New-Guid).ToString())" -RequiredResourceAccess $AzureServiceManagementAccess -ReplyUrls @("urn:ietf:wg:oauth:2.0:oob") #Create application
 
 Write-Host "Creating the key for AAD application (Qualys APP)"
-#$now = [System.DateTime]::Now
-#$yearfromnow = $now.AddYears(2)
-#$SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force 
-#New-AzADAppCredential -ApplicationId $application.ApplicationId -Password $SecureStringPassword -EndDate $yearfromnow
 $password = New-AzureADApplicationPasswordCredential -ObjectId $application.ObjectId
 
 Write-Host "Creating the Service Principal for AAD application (Qualys APP)"
@@ -125,7 +121,7 @@ catch
 {
 	Write-Host "StatusCode:" $_.Exception.Response.StatusCode.value__ 
 	Write-Host "StatusDescription:" $_.Exception.Response.StatusDescription
-    Write-Error -Message $_.Exception
+        Write-Error -Message $_.Exception
 }
 }
 }
