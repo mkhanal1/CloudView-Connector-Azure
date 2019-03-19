@@ -9,33 +9,27 @@ _**THIS SCRIPT IS PROVIDED TO YOU "AS IS."  TO THE EXTENT PERMITTED BY LAW, QUAL
 
 ## Description
 
-#### What is AWS Elastic Beanstalk
-[AWS Elastic Beanstalk](https://docs.aws.amazon.com/elastic-beanstalk/index.html) is a managed environment that provisions resources for easy deployment and scaling of web applications. It creates a load balanced and auto-scaled infrastructure with familiar Web Servers
-and the runtime of your choice; it takes care of deployment, capacity provisioning, auto-scaling and
-health monitoring of the application.
+This Resource Manager Template will deploy the following:
 
-#### Qualys Cloud Agent (CA)
-The changes done through SSH on any instance launched by Elastic Beanstalk are not persistent as the
-instances are replaced or added as per scaling policy and the new instances don’t import changes from
-previously configured instances. However, AWS provides a mechanism to use configuration files and
-Qualys leverages the same to provide you configuration files that downloads and installs Qualys Cloud
-Agent for continuous monitoring of the environment.
+* Create or use an existing Azure Automation account
+* Imports the AzureAD PowerShell Module
+* Create a Credential in Automation account for your subscription
+* Create a Credential in Automation account for your Qualys Cloud Platform
+* Create a Variable in Automation account to store base url of Qualys Cloud Platform
+* Create a Powershell runbook in Automation account
+* Create a job in Azure Automation account to execute the runbook
+
+* Automation runbooks used by this template creates an application, a service principal and assign it delegated permission to impersonate user to call Windows Azure Service Management API with reader role.
 
 ## Usage
-To deploy Cloud Agent (CA) in your environment by using configuration files, copy the files based to your Operating System 
-in a folder named .ebextensions, (**create a folder .ebextensions at the top level of your project's source code**).
-The extension of these files must be _**.config**_.
+Click on Deply to Azure icon.
 
-_**Ensure that you replace all “REPLACE_ME” fields in the file with apt parameters.**_
+_**Ensure that you input all the required fields asked in parameters section.**_
 
 **Input Parameters:**
 
+utilize azuredploy-parameters.json as an example to supply parameters field.
 * Activation ID:
 An ID to authenticate agents so that they could be grouped and bind to your account
 
-* Customer ID:
-An ID to identify your account
 
-* URL to download the installation file: 
-
-Redeploy your applications and CA will be installed in underlying infrastructure and starts continuously monitoring your elastic beanstalk environment.
