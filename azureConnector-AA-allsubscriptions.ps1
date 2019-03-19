@@ -1,6 +1,7 @@
 <#
     .DESCRIPTION
-        A runbook which creates an application and service principal with user impersonation permissions to run Windows Azure Service Management API and use them to create a Qualys Azure connector.
+        A runbook which creates an application and service principal for Qualys Azure AV Connector with user impersonation permissions 
+	to run Windows Azure Service Management API with reader role.
     .NOTES
         AUTHOR: Mikesh Khanal
         LASTEDIT: Mar 19, 2018
