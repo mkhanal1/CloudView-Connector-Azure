@@ -29,7 +29,7 @@ _**Ensure that you input all the required fields asked in parameters section.**_
 
 **Input Parameters:**
 
-utilize [**azuredeploy-parameters.json**](/Template/Example/azuredeploy.json) as an example to supply parameters field.
+utilize [**azuredeploy-parameters.json**](/Template/Example/azuredeploy-parameters.json) as an example to supply parameters field.
 
 * Activation ID: An ID to authenticate agents so that they could be grouped and bind to your account
 
