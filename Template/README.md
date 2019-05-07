@@ -24,6 +24,7 @@ This Resource Manager Template will deploy the following:
 
 ## Usage
 Click on Deply to Azure icon.
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2FCloudview_connector_Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
 
 _**Ensure that you input all the required fields asked in parameters section.**_
 
@@ -31,6 +32,12 @@ _**Ensure that you input all the required fields asked in parameters section.**_
 
 utilize [**azuredeploy-parameters.json**](/Template/Example/azuredeploy-parameters.json) as an example to supply parameters field.
 
-* Activation ID: An ID to authenticate agents so that they could be grouped and bind to your account
-
+      * _username: "Azure username to create the application and assign permissions"_
+      * _password: "Azure password to create the application and assign permissions"_
+      * _qualysuserName: "Qualys username to call CloudView API"_
+      * _qualyspassword: "Qualys password to call CloudView API"_      
+      * _baseURL: "Qualys baseurl for CloudView API"_
+      * _automationAccountName: "The name you want to give to your automation account"_
+      * _automationRegion: "The region where we you want to create your automation account "_
+      * _jobId: "an unique identifier for the job created by executing the Powershell Runbook"_
 
