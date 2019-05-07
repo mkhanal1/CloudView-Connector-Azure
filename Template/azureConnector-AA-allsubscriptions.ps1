@@ -78,7 +78,7 @@ $AzureServiceManagementAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAc
 Write-Host "Creating the AAD application (Qualys APP)"
 #Create an application, assign it credentials and assign it API permissions
 $SessionInfo = Get-AzureADCurrentSessionInfo
-$application = New-AzureADApplication -DisplayName "MikeshKhanal-$($SessionInfo.TenantId)" -IdentifierUris "https://$($SessionInfo.TenantDomain)/$((New-Guid).ToString())" -RequiredResourceAccess $AzureServiceManagementAccess -ReplyUrls @("urn:ietf:wg:oauth:2.0:oob") #Create application
+$application = New-AzureADApplication -DisplayName "QualysAzureConnector-$($SessionInfo.TenantId)" -IdentifierUris "https://$($SessionInfo.TenantDomain)/$((New-Guid).ToString())" -RequiredResourceAccess $AzureServiceManagementAccess -ReplyUrls @("urn:ietf:wg:oauth:2.0:oob") #Create application
 
 Write-Host "Creating the key for AAD application (Qualys APP)"
 $password = New-AzureADApplicationPasswordCredential -ObjectId $application.ObjectId
