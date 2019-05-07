@@ -8,24 +8,24 @@ The aim of this repository is to build a solution which will help you onboard mu
 
 This repository contains ==>
 
-  1. [**Main powershell program**](/Cloudview_Connector_Azure.ps1) 
-  2. [**Configuration file**](/example/config.json)
-  3. [**CSV with list of subscriptions**](/example/azure-subscriptions.csv)
+  1. [**Main powershell program**](Cloudview_connector_Azure/Cloudview_Connector_Azure.ps1) 
+  2. [**Configuration file**](Cloudview_connector_Azure/Example/config.json)
+  3. [**CSV with list of subscriptions**](Cloudview_connector_Azure/Example/azure-subscriptions.csv)
  
 
 ## Deployment Options
 * **All subscriptions under a Tenant or AD** : To onboard **all** the subscriptions under a Tenent or AD
-    * Input ```"all"``` in the subscriptions field of [configuration file](/example/config.json)
+    * Input ```"all"``` in the subscriptions field of [configuration file](Cloudview_connector_Azure/Example/config.json)
     
 * **All subscriptions within a Management Group** : To onboard all subscriptions within a management group
-    * Input ```"ManagementGroupName"``` in the subscriptions field of [configuration file](/example/config.json)
+    * Input ```"ManagementGroupName"``` in the subscriptions field of [configuration file](Cloudview_connector_Azure/Example/config.json)
     
 * **Multiple subscriptions listed in a CSV** : To onboard selected subscriptions
-    * Input the complete path of CSV file containing the list of subscriptions to be onboarded in the subscriptions field of [configuration file](/example/config.json)
+    * Input the complete path of CSV file containing the list of subscriptions to be onboarded in the subscriptions field of [configuration file](Cloudview_connector_Azure/Example/config.json)
 
 
      
-    **Prerequisites:**(an Azure AD application and service principal that can read resources) ([An example](/example/prerequisite.md))
+    **Prerequisites:**(an Azure AD application and service principal that can read resources) ([An example](Cloudview_connector_Azure/Example/prerequisite.md))
     
        1. Enable access to few API's in API library for project: 
              * For all projects to be onboarded, navigate to API & Services > Library and enable Cloud Resource Manager API, Compute Engine API, Kubernetes Engine API and Cloud SQL Admin API from the API library. 
@@ -46,7 +46,7 @@ This repository contains ==>
 #### Get started 
   * Making the [choice of deployment mode](#Deployment-Options) ``` All subscriptions in AD or All subscriptions in Management Group or Multiple subscriptions in AD```
   
-  * Preparing the configuration file ([An example](/example/config.json))
+  * Preparing the configuration file ([An example](Cloudview_connector_Azure/Example/config.json))
       * _username: "Qualys username to call CloudView API"_
       * _password: "Qualys password to call CloudView API"_
       * _baseurl: "Qualys baseurl for CloudView API"_
@@ -56,12 +56,12 @@ This repository contains ==>
       * _authenticationKey: "Authentication key associated with the Application created above"_
       * _debug: true/false_
       
-  * Preparing the csv file if deployment mode is not all the subscriptions Within AD or Management Group ([An example](/example/azure-subscriptions.csv))
+  * Preparing the csv file if deployment mode is not all the subscriptions Within AD or Management Group ([An example](Cloudview_connector_Azure/Example/azure-subscriptions.csv))
   
       subscriptionId |
       ---------|
       subscription1|
       subscription2|
       
-   * Run the [main powershell program](/Cloudview_Connector_Azure.ps1)
+   * Run the [main powershell program](Cloudview_connector_Azure/Cloudview_Connector_Azure.ps1)
 
