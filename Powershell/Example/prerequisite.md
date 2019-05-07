@@ -1,6 +1,6 @@
 1. Create application in Azure Active Directory:
        * Log on to the Microsoft Azure console.Goto Azure Active Directory -> App Regisrations .
-       ![Image1](/Powershell/Example/Images/1.png)
+       ![Image1](/Powershell/Example/Images/1.PNG)
        * Click New application registration and provide "Name" (A name for the application (e.g. My_Azure_Connector)),  "Application Type" (Select Web app/API), "Sign-on URL" (Enter any valid URL (e.g. https://localhost/azure_con))
        ![Image2](/Powershell/Example/Images/2.png)
        * Click Create. The newly created app appears in the list of applications. Copy the Application ID and Directory ID for config file.
