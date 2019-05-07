@@ -41,13 +41,13 @@
         "QualysuserName": {
             "type": "string",
             "metadata": {
-                "description": "The username for the Azure Automation credential."
+                "description": "Qualys username to call CloudView API."
             }
         },
         "Qualyspassword": {
             "type": "securestring",
             "metadata": {
-                "description": "The password for the Azure Automation credential."
+                "description": "Qualys password to call CloudView API."
             }
         },
         "BaseURL": {
