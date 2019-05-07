@@ -58,7 +58,7 @@
         },
         "_artifactsLocation": {
             "type": "string",
-            "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/asr-automation-recovery",
+            "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/Cloudview_connector_Azure/master/Template/azureConnector-AA-allsubscriptions.ps1",
             "metadata": {
                 "description": "URI to artifacts location"
             }
