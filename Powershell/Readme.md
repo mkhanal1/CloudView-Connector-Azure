@@ -15,10 +15,10 @@ This repository contains ==>
 
 ## Deployment Options
 * **All subscriptions under a Tenant or AD** : To onboard **all** the subscriptions under a Tenent or AD
-    * Input ```"all"``` in the subscriptions field of [configuration file](/Powershell/Example/config.json)
+    * Input ```"all"``` in the subscriptions field of [configuration file](/Powershell/Example/configAll.json)
     
 * **All subscriptions within a Management Group** : To onboard all subscriptions within a management group
-    * Input ```"ManagementGroupName"``` in the subscriptions field of [configuration file](/Powershell/Example/config.json)
+    * Input ```"ManagementGroupName"``` in the subscriptions field of [configuration file](/Powershell/Example/configAllManagement.json)
     
 * **Multiple subscriptions listed in a CSV** : To onboard selected subscriptions
     * Input the complete path of CSV file containing the list of subscriptions to be onboarded in the subscriptions field of [configuration file](/Powershell/Example/config.json)
