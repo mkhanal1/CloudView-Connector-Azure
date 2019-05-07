@@ -1,0 +1,12 @@
+{
+	"defaults": {
+		"username": "quays_mk25",
+		"password": "Passw0rd@Qu@ly5",
+		"baseurl": "https://qualysguard.qualys.com",
+		"subscriptions": "Sales",
+		"directoryId": "zz4e2763-bv56-7tr5-7t8r-1e0x2d1234eb",
+		"applicationId": "e528d91a-bcpp-67t9-87t6-876rt5f16765",
+		"authenticationKey": "[dtIM^&CIWIpxuC*UFsssmdfif7Ff9rI9d",
+		"debug": "yes"
+	}
+}
