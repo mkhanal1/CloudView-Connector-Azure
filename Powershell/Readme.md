@@ -27,19 +27,25 @@ This repository contains ==>
      
     **Prerequisites:**(an Azure AD application and service principal that can read resources) ([An example](/Powershell/Example/prerequisite.md))
     
-       1. Enable access to few API's in API library for project: 
-             * For all projects to be onboarded, navigate to API & Services > Library and enable Cloud Resource Manager API, Compute Engine API, Kubernetes Engine API and Cloud SQL Admin API from the API library. 
+       1. Create application in Azure Active Directory: 
+             * Log on to the Microsoft Azure console.Goto Azure Active Directory -> App Regisrations .
+             * Click New application registration and provide "Name" (A name for the application (e.g. My_Azure_Connector)),  "Application Type" (Select Web app/API), "Sign-on URL" (Enter any valid URL (e.g. https://localhost/azure_con))
+             * Click Create. The newly created app appears in the list of applications. Copy the Application ID and Directory ID for config file.
 
-       2. Create a service account in any project and download a configuration file: 
-             * Navigate to IAM & admin > Service accounts and click CREATE SERVICE ACCOUNT. Provide a name and description (optional) for the service account and click CREATE. 
-             * Click CREATE KEY.  Select JSON as Key type and click CREATE. A message saying “Private key saved to your computer” is displayed and the JSON file is downloaded to your computer. Click CLOSE and then click DONE. 
+       2. Provide permission to the new application to access the Windows Azure Service Management API and create a secret key: 
+             * Navigate to Azure Active Directory -> App Regisrations and select the application that you created and go to API permissions under Manage Section. 
+             * Click Add a permission > Azure Service Management API and click Select.
+             * Click Delegated Permissions, and select user_impersonation and then click Add Permissions.
+             * Select the application that you created and go to Certificates & secrets and click on New client secret under Client secrets.
+             * Add a description and expiry duration for the key and click Save.
+             * The value of the key appears in the Value field. Copy the key value at this time. You won’t be able to retrieve it later. Paste the key value as Authentication Key into the connector details.
 
-       3. Attach role (Resource Manager -> Organization Viewer, Folder Viewer, Project Viewer and    IAM -> Security Reviewer) to the Service account created in step1: 
-             * Navigate to Organization 
-             * Navigate to IAM & admin > IAM 
-             * Click on ADD tab 
-             * Paste the service account email address in the New member field 
-             * Add roles mentioned above in the Role field and click on CONTINUE 
+       3. Attach role (Reader Role) to the application created in step1: 
+             * Navigate to Management Groups 
+             * Select the group you want to add permissions to. 
+             * Click on Details, next to the name of the management group 
+             * Navigate to Access Control(IAM) and Clickon ADD -> Add role assignment 
+             * Type in Reader in "Role" field and assign it to your application. 
             
 ## Usage
 
