@@ -60,8 +60,8 @@ This repository contains ==>
   
       subscriptionId |
       ---------|
-      project1|
-      project2|
+      subscription1|
+      subscription2|
       
    * Run the [main powershell program](/Cloudview_Connector_Azure.ps1)
 
