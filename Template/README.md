@@ -32,12 +32,12 @@ _**Ensure that you input all the required fields asked in parameters section.**_
 
 utilize [**azuredeploy-parameters.json**](/Template/Example/azuredeploy-parameters.json) as an example to supply parameters field.
 
-      * _username: "Azure username to create the application and assign permissions"_
-      * _password: "Azure password to create the application and assign permissions"_
-      * _qualysuserName: "Qualys username to call CloudView API"_
-      * _qualyspassword: "Qualys password to call CloudView API"_      
-      * _baseURL: "Qualys baseurl for CloudView API"_
-      * _automationAccountName: "The name you want to give to your automation account"_
-      * _automationRegion: "The region where we you want to create your automation account "_
-      * _jobId: "an unique identifier for the job created by executing the Powershell Runbook"_
+    * _username: "Azure username to create the application and assign permissions"_
+    * _password: "Azure password to create the application and assign permissions"_
+    * _qualysuserName: "Qualys username to call CloudView API"_
+    * _qualyspassword: "Qualys password to call CloudView API"_      
+    * _baseURL: "Qualys baseurl for CloudView API"_
+    * _automationAccountName: "The name you want to give to your automation account"_
+    * _automationRegion: "The region where we you want to create your automation account "_
+    * _jobId: "an unique identifier for the job created by executing the Powershell Runbook"_
 
