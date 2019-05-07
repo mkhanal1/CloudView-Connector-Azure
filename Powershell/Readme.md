@@ -18,7 +18,7 @@ This repository contains ==>
     * Input ```"all"``` in the subscriptions field of [configuration file](/Powershell/Example/configAll.json)
     
 * **All subscriptions within a Management Group** : To onboard all subscriptions within a management group
-    * Input ```"ManagementGroupName"``` in the subscriptions field of [configuration file](/Powershell/Example/configAllManagement.json)
+    * Input ```"ManagementGroupId"``` in the subscriptions field of [configuration file](/Powershell/Example/configAllManagement.json)
     
 * **Multiple subscriptions listed in a CSV** : To onboard selected subscriptions
     * Input the complete path of CSV file containing the list of subscriptions to be onboarded in the subscriptions field of [configuration file](/Powershell/Example/config.json)
