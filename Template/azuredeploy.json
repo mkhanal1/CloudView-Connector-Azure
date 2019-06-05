@@ -96,7 +96,7 @@
         "runbook":
             {
                 "name": "Azure-Connector",
-                "url": "[concat(parameters('_artifactsLocation'), '/scripts/Azure-Connector.ps1', parameters('_artifactsLocationSasToken'))]",
+                "url": "[concat(parameters('_artifactsLocation'), 'azureConnector-AA-allsubscriptions.ps1', parameters('_artifactsLocationSasToken'))]",
                 "description": "A Runbook to create Azure Connector"
             },
 	"module":
