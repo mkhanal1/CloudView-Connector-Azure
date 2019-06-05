@@ -4,6 +4,7 @@
     "parameters": {
         "automationAccountName": {
             "type": "string",
+	    "defaultValue": "QualysAA",
             "metadata": {
                 "description": "Specify the name of your Automation Account"
             }
@@ -28,30 +29,35 @@
         },
         "userName": {
             "type": "string",
+	    "defaultValue": "mkhanal@contoso.com",
             "metadata": {
-                "description": "The username for the Azure Automation credential."
+                "description": "The username of the Azure portal for the Azure Automation credential."
             }
         },
         "password": {
             "type": "securestring",
+	    "defaultValue": "AzurePassw0rd",
             "metadata": {
-                "description": "The password for the Azure Automation credential."
+                "description": "The password of the Azure portal for the Azure Automation credential."
             }
         },
         "QualysuserName": {
             "type": "string",
+	    "defaultValue": "Quays_mk",
             "metadata": {
                 "description": "Qualys username to call CloudView API."
             }
         },
         "Qualyspassword": {
             "type": "securestring",
+	    "defaultValue": "QualysPassw0rd",
             "metadata": {
                 "description": "Qualys password to call CloudView API."
             }
         },
         "BaseURL": {
             "type": "string",
+	    "defaultValue": "https://qualysguard.qg2.apps.qualys.com",
             "metadata": {
                 "description": "The base URL for Qualys Cloud Platform API."
             }
@@ -73,7 +79,7 @@
         "jobId": {
             "type": "string",
             "metadata": {
-                "description": "The GUID for the runbook job to be started."
+                "description": "The GUID for the runbook job to be started. An example: e6abf1fd-6311-4444-ac1a-22aae3cacdae"
             }
         }
     },
