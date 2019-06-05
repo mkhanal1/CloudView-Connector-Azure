@@ -29,6 +29,7 @@ if(($azureCredential -ne $null) -AND ($QualysCredential -ne $null) )
 Write-Output "Attempting to authenticate as: [$($azureCredential.UserName)], [$($QualysCredential.UserName)]"
 
 $URI = Get-AutomationVariable -Name "baseurl"
+$URI = $URI + "/cloudview-api/rest/v1/azure/connectors"
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $QualysCredential.Username,$QualysCredential.Password)))
 $Headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("X-Requested-With","Qualys Runbook (Powershell)")
