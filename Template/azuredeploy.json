@@ -139,6 +139,7 @@
                     "tags": {},
                     "properties": {
                         "description": "The base URL for Qualys Cloud Platform API.",
+			    "value": "string",
                         "value": "[parameters('BaseURL')]"
                     }
                 },				
