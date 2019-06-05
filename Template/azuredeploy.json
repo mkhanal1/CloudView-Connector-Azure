@@ -86,19 +86,17 @@
                 }
             }
         },
-        "runbook": [
+        "runbook":
             {
                 "name": "Azure-Connector",
                 "url": "[concat(parameters('_artifactsLocation'), '/scripts/Azure-Connector.ps1', parameters('_artifactsLocationSasToken'))]",
                 "description": "A Runbook to create Azure Connector"
-            }
-        ],
-		"module": [
+            },
+	"module":
             {
                 "name": "AzureAD",
                 "url": "https://psg-prod-eastus.azureedge.net/packages/azuread.2.0.2.4.nupkg"
-            }
-        ]   
+            }   
 	},
     "resources": [
         {
@@ -204,7 +202,7 @@
 					"apiVersion": "2015-01-01-preview",
 					"location": "[parameters('automationRegion')]",
 					"dependsOn": [
-					"[concat('Microsoft.Automation/automationAccounts/', parameters('accountName'))]"
+					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
 					],
 					"tags": { },
 					"properties": {
