@@ -207,7 +207,7 @@
 				{
 					"name": "[variables('runbook').name]",
 					"type": "runbooks",
-					"apiVersion": "2015-01-01-preview",
+					"apiVersion": "2015-10-31",
 					"location": "[parameters('automationRegion')]",
 					"dependsOn": [
 					"[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
