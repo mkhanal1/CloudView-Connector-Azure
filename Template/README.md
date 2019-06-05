@@ -1,7 +1,7 @@
 # Azure_Connector
 Deploy Qualys Azure Connector
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2FCloudview_connector_Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2Fcloudview_connector_Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
 [![Visualize](http://armviz.io/visualizebutton.png)](http://armviz.io/#/?load=https://raw.githubusercontent.com/Qualys-Public/azure_connector/master/Template/azuredeploy.json)
 
 ## License
