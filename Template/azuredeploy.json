@@ -57,7 +57,7 @@
         },
         "BaseURL": {
             "type": "string",
-	    "defaultValue": "https://qualysguard.qg2.apps.qualys.com",
+	    "defaultValue": "https:\/\/qualysguard.qg2.apps.qualys.com",
             "metadata": {
                 "description": "The base URL for Qualys Cloud Platform API."
             }
