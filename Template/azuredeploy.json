@@ -79,7 +79,7 @@
         "jobId": {
             "type": "string",
             "metadata": {
-                "description": "The GUID for the runbook job to be started. An example: e6abf1fd-6311-4444-ac1a-22aae3cacdae"
+                "description": "A job will be triggered once the other resources are deployed. The job needs a unique GUID as the jobId. You can use this to identify the job later in your script and to retrieve the job output.An example: e6abf1fd-6311-4444-ac1a-22aae3cacdae"
             }
         }
     },
