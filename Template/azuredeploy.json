@@ -169,7 +169,7 @@
 				{
 					"apiVersion": "2015-10-31",
 					"type": "Microsoft.Automation/automationAccounts/modules",
-					"name": "[concat(parameters('automationAccountName'), '/', variables('module').name)]",
+					"name": "[concat(parameters('automationAccountName'), '/', [variables('module').name])]",
 					"location": "[parameters('automationRegion')]",
 					"dependsOn": [
 						"[resourceId('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
