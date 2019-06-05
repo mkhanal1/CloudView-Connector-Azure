@@ -78,6 +78,7 @@
         },
         "jobId": {
             "type": "string",
+		"defaultValue": "[newGuid()]",
             "metadata": {
                 "description": "A job will be triggered once the other resources are deployed. The job needs a unique GUID as the jobId. You can use this to identify the job later in your script and to retrieve the job output.An example: e6abf1fd-6311-4444-ac1a-22aae3cacdae"
             }
@@ -140,7 +141,7 @@
                     "properties": {
                         "description": "The base URL for Qualys Cloud Platform API.",
 			    "value": "string",
-                        "value": "[parameters('BaseURL')]"
+                        "value": "[concat('\"',parameters('BaseURL'),'\"')]"
                     }
                 },				
 			    {
