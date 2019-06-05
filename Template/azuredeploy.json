@@ -64,7 +64,7 @@
         },
         "_artifactsLocation": {
             "type": "string",
-            "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/cloudview_connector_Azure/master/Template/azureConnector-AA-allsubscriptions.ps1",
+            "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/cloudview_connector_Azure/master/Template/",
             "metadata": {
                 "description": "URI to artifacts location"
             }
@@ -78,7 +78,7 @@
         },
         "jobId": {
             "type": "string",
-		"defaultValue": "[newGuid()]",
+		"defaultValue": "[guid()]",
             "metadata": {
                 "description": "A job will be triggered once the other resources are deployed. The job needs a unique GUID as the jobId. You can use this to identify the job later in your script and to retrieve the job output.An example: e6abf1fd-6311-4444-ac1a-22aae3cacdae"
             }
