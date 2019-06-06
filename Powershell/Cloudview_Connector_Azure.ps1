@@ -90,7 +90,7 @@ function AddConnector($subscriptionIds)
 		echo $body
 		Add-Content "Connector with below details" -Path $debugfile.Name
 		Add-Content $body -Path $debugfile.Name
-		$result = Invoke-RestMethod -Headers $headers -Uri $URI -Method Post -Body $body -SkipCertificateCheck -SslProtocol Tls12  
+		$result = Invoke-RestMethod -Headers $headers -Uri $URI -Method Post -Body $body -SslProtocol Tls12  
 		Write-Host "StatusCode" $result.StatusCode
 		if ($debug -ne $null)
 		{
