@@ -8,6 +8,8 @@ $directoryId = $config.defaults.directoryId
 $applicationId = $config.defaults.applicationId
 $authenticationKey = $config.defaults.authenticationKey
 
+# TO BE REMOVED from "START HERE" to "END HERE" if you are using Powershell 6
+# STARTS HERE
 add-type @"
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
@@ -23,6 +25,8 @@ $AllProtocols = [System.Net.SecurityProtocolType]'Tls11,Tls12'
 [System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
+# TO BE REMOVED 
+# ENDS HERE
 
 function getSubscriptions($subscriptions)
 {
