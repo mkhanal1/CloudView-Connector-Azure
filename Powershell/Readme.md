@@ -10,7 +10,7 @@ This repository contains ==>
 
   1. [**Main powershell program**](/Powershell/Cloudview_Connector_Azure.ps1) 
   2. [**Configuration file**](/Powershell/config/config.json)
-  3. [**CSV with list of subscriptions**](/Powershell/Example/azure-subscriptions.csv)
+  3. [**CSV with list of subscriptions**](/Powershell/config/azure-subscriptions.csv)
  
 
 ## Deployment Options
