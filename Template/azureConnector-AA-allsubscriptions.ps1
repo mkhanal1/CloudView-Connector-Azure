@@ -69,7 +69,7 @@ if(($azureCredential -ne $null) -AND ($QualysCredential -ne $null) )
 	
 	$choice =  Get-AutomationVariable -Name "choice"
 	[string[]]$subscriptionId = @()
-	if ($choice.ToLower() -ne "all")
+	if ($choice.ToLower() -eq "all")
 	{
 		$subscriptionId = (Get-AzureRmSubscription).SubscriptionId
 	}
