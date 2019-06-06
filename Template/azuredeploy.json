@@ -62,6 +62,13 @@
                 "description": "The base URL for Qualys Cloud Platform API."
             }
         },
+	     "choice": {
+            "type": "string",
+	    "defaultValue": "All",
+            "metadata": {
+                "description": "Use "current" as a choice for the current subscription where you deploy this template and "ALL" for all subscriptions user (Provided as Parameter to this template) have access to."
+            }
+        },
         "_artifactsLocation": {
             "type": "string",
             "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/cloudview_connector_Azure/master/Template/",
@@ -143,7 +150,21 @@
 			    "value": "string",
                         "value": "[concat('\"',parameters('BaseURL'),'\"')]"
                     }
-                },				
+                },
+		 {
+                    "name": "choice",
+                    "type": "variables",
+                    "apiVersion": "2015-10-31",
+                    "dependsOn": [
+                        "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+                    ],
+                    "tags": {},
+                    "properties": {
+                        "description": "The choice for current vs all subscriptions the user has access to.",
+			    "value": "string",
+                        "value": "[concat('\"',parameters('choice'),'\"')]"
+                    }
+                },
 			    {
 					"name": "QualysCredentials",
 					"type": "credentials",
