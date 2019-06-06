@@ -9,7 +9,7 @@ The aim of this repository is to build a solution which will help you onboard mu
 This repository contains ==>
 
   1. [**Main powershell program**](/Powershell/Cloudview_Connector_Azure.ps1) 
-  2. [**Configuration file**](/Powershell/Example/config.json)
+  2. [**Configuration file**](/Powershell/config/config.json)
   3. [**CSV with list of subscriptions**](/Powershell/Example/azure-subscriptions.csv)
  
 
