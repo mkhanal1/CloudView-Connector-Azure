@@ -62,7 +62,7 @@ This repository contains ==>
       * _authenticationKey: "Authentication key associated with the Application created above"_
       * _debug: true/false_
       
-  * Preparing the csv file if deployment mode is not all the subscriptions Within AD or Management Group ([An example](/Powershell/Example/azure-subscriptions.csv))
+  * Preparing the csv file if deployment mode is not all the subscriptions Within AD or Management Group ([An example](/Powershell/config/azure-subscriptions.csv))
   
       subscriptionId |
       ---------|
