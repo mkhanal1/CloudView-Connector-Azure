@@ -71,3 +71,6 @@ This repository contains ==>
       
    * Run the [main powershell program](/Powershell/Cloudview_Connector_Azure.ps1)
 
+
+## *NOTE: This script has been tested using Powershell 5.1* ##
+## *You can use the same script for Powershell 6 by removing the section TO BE REMOVED* ##
