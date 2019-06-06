@@ -1,0 +1,12 @@
+{
+	"defaults": {
+		"username": "Qualys Username for CloudView APIs",
+		"password": "Qualys Password for CloudView APIs",
+		"baseurl": "Qualys Base URL for CloudView APIs",
+		"subscriptions": "all or full path of csv or management group name",
+		"directoryId": "The ID of the directory",
+		"applicationId": "The Id of the application",
+		"authenticationKey": "The authentication key",
+		"debug": "yes or no"
+	}
+}
