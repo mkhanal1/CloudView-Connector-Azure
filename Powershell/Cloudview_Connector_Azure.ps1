@@ -34,7 +34,8 @@ function getSubscriptions($subscriptions)
 	{
 		$file = Import-Csv -Path $subscriptions
 		$file | ForEach-Object {
-			AddConnector $_.subscriptionId
+			$subscriptionName = (Get-AzSubscription -SubscriptionId $_.subscriptionId).Name
+			AddConnector $_.subscriptionId $subscriptionName
 		}
 	}
 	else
@@ -50,7 +51,8 @@ function getSubscriptions($subscriptions)
 			if ($subscriptionId.Children[$i].Type -eq "/subscriptions")
 			{
 				$subscriptionIds = $subscriptionId.Children[$i].Name
-				AddConnector $subscriptionIds
+				$subscriptionName = (Get-AzSubscription -SubscriptionId $subscriptionIds).Name
+				AddConnector $subscriptionIds $subscriptionName
 				$i += 1
 			}
 			else
@@ -90,7 +92,7 @@ function main()
 	}
 }
 
-function AddConnector($subscriptionIds)
+function AddConnector($subscriptionIds,$subscriptionName)
 {
 	echo "------------------------------Creating AZURE Connectors--------------------------------"
 	Add-Content "------------------------------Creating AZURE Connectors--------------------------------" -Path $debugfile.Name
@@ -99,7 +101,7 @@ function AddConnector($subscriptionIds)
 	   "authenticationKey" = $authenticationKey;
 	   "description" = $subscriptionIds;
 	   "directoryId"= $directoryId;
-	   "name" = $subscriptionIds;
+	   "name" = $subscriptionName + "-" + $subscriptionIds;
 	   "subscriptionId" = $subscriptionIds;
 	}
 	$body = $bodycontent | ConvertTo-Json
