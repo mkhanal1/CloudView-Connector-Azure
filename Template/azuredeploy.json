@@ -71,7 +71,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/cloudview_connector_Azure/master/Template/",
+      "defaultValue": "https://raw.githubusercontent.com/Qualys-Public/CloudView-Connector-Azure/master/Template/",
       "metadata": {
         "description": "URI to artifacts location"
       }
