@@ -1,8 +1,8 @@
 # Azure_Connector
 Deploy Qualys Azure Connector
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2Fcloudview_connector_Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
-[![Visualize](http://armviz.io/visualizebutton.png)](http://armviz.io/#/?load=https://raw.githubusercontent.com/Qualys-Public/azure_connector/master/Template/azuredeploy.json)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2FCloudView-Connector-Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
+[![Visualize](http://armviz.io/visualizebutton.png)](http://armviz.io/#/?load=https://raw.githubusercontent.com/Qualys-Public/CloudView-Connector-Azure/master/Template/azuredeploy.json)
 
 ## License
 _**THIS SCRIPT IS PROVIDED TO YOU "AS IS."  TO THE EXTENT PERMITTED BY LAW, QUALYS HEREBY DISCLAIMS ALL WARRANTIES AND LIABILITY FOR THE PROVISION OR USE OF THIS SCRIPT.  IN NO EVENT SHALL THESE SCRIPTS BE DEEMED TO BE CLOUD SERVICES AS PROVIDED BY QUALYS**_
@@ -24,7 +24,7 @@ This Resource Manager Template will deploy the following:
 
 ## Usage
 Click on Deply to Azure icon.
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2FCloudview_connector_Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FQualys-Public%2FCloudView-Connector-Azure%2Fmaster%2FTemplate%2Fazuredeploy.json) 
 
 _**Ensure that you input all the required fields asked in parameters section.**_
 
