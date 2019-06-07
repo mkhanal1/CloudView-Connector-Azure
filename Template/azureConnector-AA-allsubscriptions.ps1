@@ -103,9 +103,9 @@ if(($azureCredential -ne $null) -AND ($QualysCredential -ne $null) )
 		$bodycontent = @{
    			"applicationId" = $applicationId;
    			"authenticationKey" = $authenticationKey;
-   			"description" = ((Get-AzureRmSubscription -subscriptionid $Subs).Name) + $Subs ;
+   			"description" = ((Get-AzureRmSubscription -subscriptionid $Subs).SubscriptionName) + " " + $Subs ;
    			"directoryId"= $SessionInfo.TenantId;
-   			"name" = (Get-AzureRmSubscription -subscriptionid $Subs).Name;
+   			"name" = (Get-AzureRmSubscription -subscriptionid $Subs).SubscriptionName;
    			"subscriptionId" = $Subs;
 		}
 		$body = $bodycontent | ConvertTo-Json
